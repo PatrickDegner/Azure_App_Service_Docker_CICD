@@ -1,0 +1,20 @@
+name: Linux Container CICD Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        docker login -u "${{ secrets.REGISTRY_USERNAME }}" -p "${{ secrets.REGISTRY_PASSWORD }}" docker.io
+        docker build -t patrickdeg/patrickdockerli .
+        docker push docker.io/patrickdeg/patrickdockerli:latest    
+
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'patricksapps '
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images: 'docker.io/patrickdeg/patrickdockerli:latest'
