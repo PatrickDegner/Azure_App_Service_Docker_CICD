@@ -14,5 +14,6 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build -t patrickdeg/patrickdockerli .
+        
+        docker build -t patrickdockerli .
         docker push patrickdeg/patrickdockerli:latest    
