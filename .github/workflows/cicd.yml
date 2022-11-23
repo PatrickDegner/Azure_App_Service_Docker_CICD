@@ -8,11 +8,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: azure/docker-login@v1
-      with:
-        login-server: docker.io
-        username: ${{ secrets.REGISTRY_USERNAME }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
+        docker login -u "${{ secrets.REGISTRY_USERNAME }}" -p "${{ secrets.REGISTRY_PASSWORD }}" docker.io
         docker build -t patrickdeg/patrickdockerli .
         docker push docker.io/patrickdeg/patrickdockerli:latest    
