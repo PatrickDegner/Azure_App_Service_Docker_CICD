@@ -29,7 +29,11 @@ On change,
 
 and pull request from dev branch, github actions triggers its testing workflow
 
-[tests.yml](https://github.com/PatrickDegner/Azure_App_Service_Docker_CICD/blob/master/.github/workflows/tests.yml) - test the code
+
+- [The tests.yml](https://github.com/PatrickDegner/Azure_App_Service_Docker_CICD/blob/master/.github/workflows/tests.yml) - the test workflow
+
+- [The unittests](https://github.com/PatrickDegner/Azure_App_Service_Docker_CICD/blob/master/tests/test_app.py) - the unittests
+
 
 ![image](https://user-images.githubusercontent.com/108484798/203846451-5cfe3039-0c91-4701-a670-bc16587e444b.png)
 ![image](https://user-images.githubusercontent.com/108484798/203846531-9016b19f-31da-4100-a119-c4608fce4e0a.png)
