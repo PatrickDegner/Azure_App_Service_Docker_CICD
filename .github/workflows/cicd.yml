@@ -3,8 +3,6 @@ name: Linux Container CICD Workflow
 on: 
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 permissions:
   contents: read
