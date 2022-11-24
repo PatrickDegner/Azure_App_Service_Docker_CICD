@@ -23,3 +23,4 @@ jobs:
         app-name: 'patricksapps '
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: 'docker.io/patrickdeg/patrickdockerli:latest'
+
