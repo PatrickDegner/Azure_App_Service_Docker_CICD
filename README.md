@@ -4,7 +4,9 @@
 Small example of a CI/CD workflow
 
 On Code change and pull request on github, the Code will be testet.
-If test looks good, next step is merging
+
+If test looks good, next step is merging.
+
 After merge the publish workflow will dockerize the code from github,
 push it on dockerhub and Azure App Service will fetch it as the new version of the webapp
 
