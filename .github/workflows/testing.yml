@@ -1,6 +1,6 @@
-name: Linux Container CICD Workflow
+name: Test Pull Request
 
-on: 
+on:
   push:
     branches: [ "master" ]
 
@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
@@ -35,15 +34,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: build Docker Container
-    
-      run: |
-        docker login -u "${{ secrets.REGISTRY_USERNAME }}" -p "${{ secrets.REGISTRY_PASSWORD }}" docker.io
-        docker build -t patrickdeg/patrickdockerli .
-        docker push docker.io/patrickdeg/patrickdockerli:latest    
-
-    - uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'patricksapps '
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'docker.io/patrickdeg/patrickdockerli:latest'
