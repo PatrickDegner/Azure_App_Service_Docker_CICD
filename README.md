@@ -13,8 +13,8 @@ push it on dockerhub and Azure App Service will fetch it as the new version of t
 ## Tools used
 - [FastAPIScrapeGameNews](https://github.com/PatrickDegner/FastAPIScrapeGameNews) - My FastAPI repo
 - [GitHub](https://github.com) - Push the Code
-- [Docker](https://docker.com) - Create the container
-- [DockerHub](https://hub.docker.com/) - Push the container
+- [Docker](https://docker.com) - Create the image
+- [DockerHub](https://hub.docker.com/) - Push the image
 - [GitHub Actions](https://github.com/features/actions) - Workflow to test and deploy
 - [Azure APP Service](https://azure.microsoft.com/de-de/products/app-service/#overview) - Push the container and host the code
 
